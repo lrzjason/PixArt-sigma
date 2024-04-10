@@ -155,6 +155,9 @@ python tools/download.py
 
 # demo launch
 python scripts/interface.py --model_path output/pretrained_models/PixArt-Sigma-XL-2-512-MS.pth --image_size 512 --port 11223
+
+# demo launch t5 cpu
+python scripts/inference_cpu_t5.py --model_path output/pretrained_models/PixArt-Sigma-XL-2-1024-MS.pth --image_size 512 --port 11223 --pipeline_load_from output/pixart_sigma_sdxlvae_T5_diffusers
 ```
 
 ## 2. Integration in diffusers
