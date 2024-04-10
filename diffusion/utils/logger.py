@@ -6,6 +6,7 @@ from .dist_utils import is_local_master
 from mmcv.utils.logging import logger_initialized
 
 
+
 def get_root_logger(log_file=None, log_level=logging.INFO, name='PixArt'):
     """Get root logger.
 
@@ -19,6 +20,8 @@ def get_root_logger(log_file=None, log_level=logging.INFO, name='PixArt'):
     """
     if log_file is None:
         log_file = '/dev/null'
+        if not os.path.exists(log_file):
+            log_file = os.path.join(os.getcwd(),'log.txt')
     logger = get_logger(name=name, log_file=log_file, log_level=log_level)
     return logger
 
